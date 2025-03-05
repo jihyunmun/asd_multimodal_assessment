@@ -1,23 +1,44 @@
 # README.md
 
-This repository provides a framework to train a multimodal model to evaluate a social communication severity level of children with ASD.
+This repository provides a cascaded multimodal framework to train a model which evaluates a social communication severity level of children with ASD.
 
-## How to preprocess (extract embeddings)
-It requires a csv file which contains wave file path and transcription.
+![Image](https://github.com/user-attachments/assets/1c30dc0b-70cb-46bb-a3f4-5456002fcfa1)
+
+## Requirements
+It requires wave files and a csv file which contains wave file path.
 
 ### Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
-### Run the data preprocessing script
+
+### Run scripts
+#### Decoding
+The ASR module decodes the target waveforms.
 ```bash
-python extract_embeddings.py
-```
-## Train and inference
-```bash
-python main.py --mode train
+python3 main.py --mode decode
 ```
 
+#### Extract Embedding
+The speech and language foundation models extract embeddings from the raw waveform and transcribed text.
 ```bash
-python main.py --mode inference
+python3 main.py --mode embed
+```
+
+#### Training
+Train the multimodal assessment model
+```bash
+python3 main.py --mode train
+```
+
+#### Inference
+Get the final predicted results with ensembled models
+```bash
+python3 main.py --mode inference
+```
+
+#### Run the whole code
+If you want to run the whole code in a row, simply run this code
+```bash
+python3 main.py --mode all
 ```
