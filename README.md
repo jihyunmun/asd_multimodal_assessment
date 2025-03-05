@@ -1,6 +1,7 @@
 # README.md
 
 This repository provides a cascaded multimodal framework to train a model which evaluates a social communication severity level of children with ASD.
+The original paper is submitted to Interspeech 2025.
 
 ![Image](https://github.com/user-attachments/assets/1c30dc0b-70cb-46bb-a3f4-5456002fcfa1)
 
